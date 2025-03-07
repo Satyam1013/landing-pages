@@ -10,105 +10,124 @@
     />
     <style>
       body {
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            background: white;
-            padding: 15px 0;
-        }
-        .navbar-brand {
-            font-weight: bold;
-            color: #d9534f;
-            font-size: 22px;
-        }
-        .hero-section {
-            position: relative;
-            background: url('public/home.jpeg') no-repeat center center/cover;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        .hero-content h1 {
-            font-size: 30px;
-            font-weight: bold;
-        }
-        .hero-content p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        .hero-content .btn {
-            background: #d9534f;
-            border: none;
-            font-size: 16px;
-            padding: 10px 20px;
-        }
-        .about-section {
-            background: #f8f9fa;
-            padding: 50px 20px;
-            text-align: center;
-        }
-        .about-section img {
-            width: 100%;
-            height: auto;
-            margin-top: 20px;
-        }
-        .products-section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-        .product-card {
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            text-align: left;
-        }
-        .product-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .product-card ul {
-            padding-left: 20px;
-        }
-        .contact-section {
-            padding: 50px 20px;
-            background: #f8f9fa;
-        }
-        .contact-section .contact-form {
-            max-width: 500px;
-            margin: auto;
-        }
-        .contact-section .contact-details {
-            margin-top: 20px;
-        }
-        .contact-section iframe {
-            width: 100%;
-            height: 300px;
-            border: 0;
-        }
-        footer {
-            background: #343a40;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
+        font-family: Arial, sans-serif;
+      }
+      .navbar {
+        background: white;
+        padding: 15px 0;
+      }
+      .navbar-brand {
+        font-weight: bold;
+        color: #d9534f;
+        font-size: 22px;
+      }
+      .hero-section {
+        position: relative;
+        background: url("public/home.jpeg") no-repeat center center/cover;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .hero-content h1 {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .hero-content p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      .hero-content .btn {
+        background: #d9534f;
+        border: none;
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+      .about-section {
+        background: #f8f9fa;
+        padding: 50px 20px;
+        text-align: center;
+      }
+      .about-section img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+      }
+      .products-section {
+        padding: 50px 20px;
+        text-align: center;
+      }
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        justify-content: center;
+      }
+      .product-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      .product-card ul {
+        padding-left: 20px;
+      }
+      .contact-section {
+        padding: 50px 20px;
+        background: #f8f9fa;
+      }
+      .contact-section .contact-form {
+        max-width: 500px;
+        margin: auto;
+      }
+      .contact-section .contact-details {
+        margin-top: 20px;
+      }
+      .contact-section iframe {
+        width: 100%;
+        height: 300px;
+        border: 0;
+      }
+      .footer {
+        background: #f8f9fa;
+        padding: 40px 0;
+        text-align: center;
+      }
+      .footer .container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        text-align: left;
+      }
+      .footer-column {
+        max-width: 300px;
+      }
+      .footer ul {
+        list-style: none;
+        padding: 0;
+      }
+      .footer ul li {
+        margin-bottom: 8px;
+      }
+      .footer p {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 14px;
+      }
     </style>
   </head>
   <body>
@@ -134,7 +153,7 @@
               <a class="nav-link" href="#products">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-danger" href="#contact">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -175,18 +194,26 @@
     <section id="products" class="products-section">
       <h2>Our Premium Products</h2>
       <div class="container mt-4">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="product-card">
-              <img src="public/brick.jpg" alt="Red Clay Bricks" />
-              <h4 class="mt-3">Red Clay Bricks</h4>
-              <p>Our classic red clay bricks are known for:</p>
-              <ul>
-                <li>High compressive strength</li>
-                <li>Low water absorption</li>
-                <li>Uniform size and shape</li>
-              </ul>
-            </div>
+        <div class="product-list">
+          <div class="product-card">
+            <img src="public/brick.jpg" alt="Red Clay Bricks" />
+            <h4 class="mt-3">Red Clay Bricks</h4>
+            <p>Our classic red clay bricks are known for:</p>
+            <ul>
+              <li>High compressive strength</li>
+              <li>Low water absorption</li>
+              <li>Uniform size and shape</li>
+            </ul>
+          </div>
+          <div class="product-card">
+            <img src="public/concrete.jpeg" alt="Concrete Bricks" />
+            <h4 class="mt-3">Concrete Bricks</h4>
+            <p>Our durable concrete bricks are known for:</p>
+            <ul>
+              <li>Superior thermal insulation</li>
+              <li>Excellent fire resistance</li>
+              <li>Eco-friendly and long-lasting</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -234,7 +261,31 @@
       </div>
     </section>
 
-    <footer>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-column">
+          <h4>Bricks</h4>
+          <p>Creating beautiful spaces with contemporary furniture designs.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li>About Us</li>
+            <li>Collections</li>
+            <li>Blog</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li>FAQ</li>
+            <li>Shipping</li>
+            <li>Returns</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+      </div>
       <p>&copy; 2025 Bharat Bricks. All rights reserved.</p>
     </footer>
 
