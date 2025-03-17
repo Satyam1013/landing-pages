@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Advisor Landing Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="heart.png" alt="Logo" class="logo" />
+      </div>
+      <h1 class="heading">Your <span class="highlight">Personal</span></h1>
+      <h1 class="heading">AI Advisor</h1>
+      <p style="color: #52535a; margin-top: 30px">
+        These are just a few of the many attractions Paris has to offer. Let me
+        know if you'd like more information or details on anything specific!
+      </p>
+      <div class="email-signup">
+        <input type="email" placeholder="Email Address" />
+        <button>Join Beta</button>
+      </div>
+      <div class="chat-box">
+        <div class="message received">
+          <img src="user1.jpg" alt="User 1" class="avatar" />
+          <div class="text">Hey Emon...</div>
+          <span class="time">6:30 pm</span>
+        </div>
+        <div class="message received">
+          <img src="user1.jpg" alt="User 1" class="avatar" />
+          <div class="text">
+            Hey, I wanted to know about your experience on UI/UX.
+          </div>
+          <span class="time">6:30 pm</span>
+        </div>
+        <div class="message sent">
+          <div class="text">Yeah, Fine. What about you?</div>
+          <img src="user2.jpg" alt="User 2" class="avatar" />
+          <span class="time">6:30 pm</span>
+        </div>
+        <div class="message sent">
+          <div class="text">Yes, I have experience of 3+ years on UI/UX.</div>
+          <img src="user2.jpg" alt="User 2" class="avatar" />
+          <span class="time">6:33 pm</span>
+        </div>
+        <div class="message-input">
+          <input type="text" placeholder="Write a message" />
+          <button>Send</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .querySelector(".message-input button")
+        .addEventListener("click", function () {
+          const input = document.querySelector(".message-input input");
+          const message = input.value;
+          if (message.trim()) {
+            const chatBox = document.querySelector(".chat-box");
+            const newMessage = document.createElement("div");
+            newMessage.classList.add("message", "sent");
+            newMessage.textContent = message;
+            chatBox.appendChild(newMessage);
+            input.value = "";
+          }
+        });
+    </script>
+    <style>
+      body {
+        background-color: #000;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        margin-top: 50px;
+      }
+      .heading {
+        font-size: 50px;
+        margin-top: 0px;
+        margin-bottom: -10px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 0px;
+      }
+      .logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 20%;
+      }
+      .time {
+        font-size: 12px;
+        color: #bbb;
+        position: absolute;
+        bottom: -15px;
+        right: 10px;
+      }
+      .highlight {
+        color: #d29cfc;
+      }
+      .email-signup {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        background: black;
+        padding: 10px;
+        border-radius: 50px;
+      }
+      .email-signup input {
+        padding: 10px;
+        border: none;
+        width: 30%;
+        background: transparent;
+        color: white;
+        outline: none;
+      }
+      .email-signup button {
+        padding: 10px 20px;
+        background: #ffccbc;
+        border: none;
+        color: black;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .chat-box {
+        background: #111;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        text-align: left;
+      }
+      .message {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        max-width: 40%;
+        position: relative;
+      }
+      .received {
+        background: #333;
+        text-align: left;
+        margin: 20px;
+      }
+      .sent {
+        background: #444;
+        text-align: right;
+        margin-left: auto;
+        margin-top: 20px;
+        flex-direction: row-reverse;
+      }
+      .message-input {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+      }
+      .avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 0 10px;
+      }
+      .message-input input {
+        padding: 10px;
+        border: none;
+        width: 50%;
+        background: transparent;
+        color: white;
+        outline: none;
+      }
+      .message-input button {
+        padding: 10px 20px;
+        background: #ffccbc;
+        border: none;
+        color: black;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    </style>
+  </body>
+</html>
